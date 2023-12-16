@@ -1,0 +1,46 @@
+---
+import { cn } from "@/lib/utils";
+interface Route {
+  href: string;
+  label: string;
+  active: boolean;
+}
+
+const pathname = Astro.url.pathname;
+
+const routes: Route[] = [
+  {
+    href: "/",
+    label: "Inicio",
+    active: pathname === "/",
+  },
+  {
+    href: "/acerca-de",
+    label: "Acerca de",
+    active: pathname === "/acerca-de",
+  },
+  {
+    href: "/boletin",
+    label: "Boletín",
+    active: pathname === "/boletin",
+  },
+];
+---
+
+<ul class="flex gap-8">
+  {
+    routes.map((route) => (
+      <li>
+        <a
+          href={route.href}
+          class={cn(
+            route.active &&
+              "underline underline-offset-8 decoration-primary decoration-2"
+          )}
+        >
+          {route.label}
+        </a>
+      </li>
+    ))
+  }
+</ul>
