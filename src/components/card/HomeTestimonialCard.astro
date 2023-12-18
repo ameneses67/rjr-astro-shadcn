@@ -1,0 +1,32 @@
+---
+import Avatar from "@/components/card/Avatar.astro";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  size: "sm" | "md" | "lg" | "xl";
+  quote: string;
+  name: string;
+  position: string;
+  className?: string;
+}
+
+const { src, alt, size, quote, name, position, className } = Astro.props;
+---
+
+<div
+  class:list={[
+    "pl-4 pr-4 pb-4 sm:pl-8 sm:pr-8 sm:pb-8 rounded-xl bg-muted border",
+    className,
+  ]}
+>
+  <Avatar {src} {alt} {size} className="mx-auto -translate-y-1/2" />
+  <div class="space-y-8 -mt-8">
+    <blockquote class="text-2xl text-center text-muted-foreground">
+      {quote}
+    </blockquote>
+    <p class="font-semibold text-primary text-center">
+      {name}, <span class="text-muted-foreground">{position}</span>
+    </p>
+  </div>
+</div>

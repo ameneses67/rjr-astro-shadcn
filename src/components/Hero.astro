@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+
+import Container from "@/components/Container.astro";
+import SectionHeader from "@/components/SectionHeader.astro";
+import HeroTestimonialCard from "@/components/card/HeroTestimonialCard.astro";
+
+import HeroImg from "@/assets/bodyshot.png";
+import JoelSanchez from "@/assets/testimonials/joel-sanchez.jpg";
+---
+
+<section>
+  <Container>
+    <div class="flex gap-4 sm:gap-8 border-b">
+      <div class="space-y-8 my-4 sm:my-8">
+        <SectionHeader
+          title="Recibe tips financieros exclusivos para suscriptores"
+          Tag="h2"
+          size="lg"
+          align="left"
+          className="capitalize"
+        />
+        <HeroTestimonialCard
+          src={JoelSanchez}
+          alt="Joel Sáncez"
+          size="sm"
+          quote="Pensaba que el blog era bueno. ¿Pero el boletín? ¡Mejor aún!"
+          name="Joel Sánchez"
+          position="Ventas"
+          className="max-w-md hidden md:flex"
+        />
+      </div>
+      <div class="max-w-fit">
+        <Image src={HeroImg} alt="Hero" />
+      </div>
+    </div>
+  </Container>
+</section>

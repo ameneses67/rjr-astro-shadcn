@@ -1,5 +1,4 @@
 ---
-import { cn } from "@/lib/utils";
 interface Route {
   href: string;
   label: string;
@@ -33,10 +32,10 @@ const routes: Route[] = [
       <li>
         <a
           href={route.href}
-          class={cn(
+          class:list={[
             route.active &&
-              "underline underline-offset-8 decoration-primary decoration-2"
-          )}
+              "underline underline-offset-8 decoration-primary decoration-2",
+          ]}
         >
           {route.label}
         </a>

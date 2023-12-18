@@ -1,0 +1,23 @@
+---
+import Avatar from "@/components/card/Avatar.astro";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  size: "sm" | "md" | "lg" | "xl";
+  quote: string;
+  name: string;
+  position: string;
+  className?: string;
+}
+
+const { src, alt, size, quote, name, position, className } = Astro.props;
+---
+
+<div class:list={["flex gap-4 p-4 rounded-xl bg-muted border", className]}>
+  <Avatar {src} {alt} {size} className="hidden md:block shrink-0" />
+  <div class="space-y-4">
+    <q class="text-lg text-muted-foreground">{quote}</q>
+    <p class="font-semibold">{name}, <span class="text-sm">{position}</span></p>
+  </div>
+</div>
