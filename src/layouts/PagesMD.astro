@@ -13,7 +13,7 @@ const { frontmatter } = Astro.props;
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
   <article
-    class="prose prose-lg mx-auto px-4 dark:prose-invert prose-a:text-primary prose-a:no-underline prose-a:hover:underline prose-li:marker:text-primary sm:px-6"
+    class="prose prose-lg mx-auto px-4 dark:prose-invert prose-a:text-primary prose-a:no-underline prose-a:hover:underline prose-li:marker:text-primary prose-p:text-muted-foreground sm:px-6"
   >
     <slot />
   </article>

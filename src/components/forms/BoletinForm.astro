@@ -1,0 +1,28 @@
+---
+// Librerías
+import { twMerge } from "tailwind-merge";
+
+interface Props {
+  text: string;
+  className?: string;
+}
+
+const { className, text } = Astro.props;
+---
+
+<div class={twMerge(className)}>
+  <form class="mx-auto flex max-w-2xl flex-col gap-2 md:flex-row md:gap-0">
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="Correo electrónico"
+      class="-mr-3 w-full rounded-lg px-3 py-4"
+    />
+    <button
+      type="submit"
+      class="bg-primary min-w-fit rounded-lg px-12 py-4 font-boldtransition"
+      >{text}</button
+    >
+  </form>
+</div>
