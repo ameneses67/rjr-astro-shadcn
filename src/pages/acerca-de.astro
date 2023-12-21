@@ -1,22 +1,25 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 
-import SectionHeader from "@/components/SectionHeader.astro";
-import Container from "@/components/Container.astro";
+import SectionHeader from "@/components/elements/SectionHeader.astro";
+import Container from "@/components/elements/Container.astro";
 
 const title = "Acerca de";
 const description =
-  "En Retirate Joven y Rico estamos comprometidos a proporcionar el conocimiento para elevar IQ financiero de nuestros suscriptores.";
+	"En Retirate Joven y Rico estamos comprometidos a proporcionar el conocimiento para elevar IQ financiero de nuestros suscriptores.";
 ---
 
-<Layout {title} {description}>
-  <Container>
-    <SectionHeader
-      title="Quiénes somos"
-      Tag="h1"
-      size="lg"
-      align="center"
-      className="mx-auto"
-    />
-  </Container>
+<Layout
+	{title}
+	{description}
+>
+	<Container>
+		<SectionHeader
+			title="Quiénes somos"
+			Tag="h1"
+			size="lg"
+			align="center"
+			className="mx-auto"
+		/>
+	</Container>
 </Layout>

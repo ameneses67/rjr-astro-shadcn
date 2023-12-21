@@ -1,60 +1,63 @@
 ---
 import { Icon } from "astro-icon";
 
-import Container from "@/components/Container.astro";
+import Container from "@/components/elements/Container.astro";
 import HomeTestimonialCard from "@/components/card/HomeTestimonialCard.astro";
-import SectionHeader from "@/components/SectionHeader.astro";
+import SectionHeader from "@/components/elements/SectionHeader.astro";
 
 import JacintaRamirez from "@/assets/testimonials/jacinta-ramirez.jpg";
 import JuanMedina from "@/assets/testimonials/juan-medina.jpg";
 
 interface Testimonial {
-  src: ImageMetadata;
-  name: string;
-  quote: string;
-  position: string;
+	src: ImageMetadata;
+	name: string;
+	quote: string;
+	position: string;
 }
 
 const testimonials: Testimonial[] = [
-  {
-    src: JacintaRamirez,
-    name: "Jacinta Ramírez",
-    quote:
-      "Cuanta verdad en los artículos del blog. Mi perspectiva respecto al dinero empezó a cambiar tan pronto empecé a leerlos. Te abren los ojos ha una realidad diferente.",
-    position: "Asistente dirección",
-  },
-  {
-    src: JuanMedina,
-    name: "Juan Medina",
-    quote:
-      "No tenía idea de cómo hacer un presupuesto. Ahora que puedo hacer un plan y fijar mis objetivos, el dinero me comenzó a rendir más y ahora hasta puedo ahorrar.",
-    position: "Empleado",
-  },
+	{
+		src: JacintaRamirez,
+		name: "Jacinta Ramírez",
+		quote:
+			"Cuanta verdad en los artículos del blog. Mi perspectiva respecto al dinero empezó a cambiar tan pronto empecé a leerlos. Te abren los ojos ha una realidad diferente.",
+		position: "Asistente dirección",
+	},
+	{
+		src: JuanMedina,
+		name: "Juan Medina",
+		quote:
+			"No tenía idea de cómo hacer un presupuesto. Ahora que puedo hacer un plan y fijar mis objetivos, el dinero me comenzó a rendir más y ahora hasta puedo ahorrar.",
+		position: "Empleado",
+	},
 ];
 ---
 
 <section class="py-8 sm:py-16">
-  <Container>
-    <SectionHeader
-      title="Lo que otros piensan"
-      Tag="h2"
-      size="md"
-      align="center"
-      className="mx-auto"
-    />
-    {
-      testimonials.map((testimonial) => (
-        <HomeTestimonialCard
-          src={testimonial.src}
-          alt={testimonial.name}
-          size="lg"
-          quote={testimonial.quote}
-          name={testimonial.name}
-          position={testimonial.position}
-          className="max-w-2xl mx-auto mt-28"
-        />
-      ))
-    }
-    <Icon name="wave" class="w-24 text-primary mx-auto mt-8 sm:mt-16" />
-  </Container>
+	<Container>
+		<SectionHeader
+			title="Lo que otros piensan"
+			Tag="h2"
+			size="md"
+			align="center"
+			className="mx-auto"
+		/>
+		{
+			testimonials.map((testimonial) => (
+				<HomeTestimonialCard
+					src={testimonial.src}
+					alt={testimonial.name}
+					size="lg"
+					quote={testimonial.quote}
+					name={testimonial.name}
+					position={testimonial.position}
+					className="max-w-2xl mx-auto mt-28"
+				/>
+			))
+		}
+		<Icon
+			name="wave"
+			class="w-24 text-primary mx-auto mt-8 sm:mt-16"
+		/>
+	</Container>
 </section>

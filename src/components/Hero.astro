@@ -1,38 +1,50 @@
 ---
 import { Image } from "astro:assets";
 
-import Container from "@/components/Container.astro";
-import SectionHeader from "@/components/SectionHeader.astro";
+import Container from "@/components/elements/Container.astro";
+import SectionHeader from "@/components/elements/SectionHeader.astro";
 import HeroTestimonialCard from "@/components/card/HeroTestimonialCard.astro";
+import BoletinForm from "@/components/forms/BoletinForm.astro";
 
 import HeroImg from "@/assets/bodyshot.png";
 import JoelSanchez from "@/assets/testimonials/joel-sanchez.jpg";
 ---
 
 <section>
-  <Container>
-    <div class="flex gap-4 sm:gap-8 border-b">
-      <div class="space-y-8 my-4 sm:my-8">
-        <SectionHeader
-          title="Recibe tips financieros exclusivos para suscriptores"
-          Tag="h2"
-          size="lg"
-          align="left"
-          className="capitalize"
-        />
-        <HeroTestimonialCard
-          src={JoelSanchez}
-          alt="Joel Sáncez"
-          size="sm"
-          quote="Pensaba que el blog era bueno. ¿Pero el boletín? ¡Mejor aún!"
-          name="Joel Sánchez"
-          position="Ventas"
-          className="max-w-md hidden md:flex"
-        />
-      </div>
-      <div class="max-w-fit">
-        <Image src={HeroImg} alt="Hero" />
-      </div>
-    </div>
-  </Container>
+	<Container>
+		<div class="flex gap-4 sm:gap-8 border-b">
+			<div class="space-y-8 my-4 sm:my-8">
+				<SectionHeader
+					title="Recibe tips financieros exclusivos para suscriptores"
+					Tag="h2"
+					size="lg"
+					align="left"
+					className="capitalize"
+				/>
+				<HeroTestimonialCard
+					src={JoelSanchez}
+					alt="Joel Sáncez"
+					size="sm"
+					quote="Pensaba que el blog era bueno. ¿Pero el boletín? ¡Mejor aún!"
+					name="Joel Sánchez"
+					position="Ventas"
+					className="max-w-md hidden md:flex"
+				/>
+				<BoletinForm
+					text="No pierdo nada"
+					className="max-w-md hidden md:block"
+				/>
+				<!-- <BoletinForm
+					buttonText="No pierdo nada"
+					classes="max-w-md hidden md:block"
+				/> -->
+			</div>
+			<div class="max-w-fit self-end">
+				<Image
+					src={HeroImg}
+					alt="Hero"
+				/>
+			</div>
+		</div>
+	</Container>
 </section>

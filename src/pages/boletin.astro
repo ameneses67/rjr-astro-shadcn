@@ -3,47 +3,57 @@ import Icon from "astro-icon";
 
 import Layout from "@/layouts/Layout.astro";
 
-import SectionHeader from "@/components/SectionHeader.astro";
-import Container from "@/components/Container.astro";
+import SectionHeader from "@/components/elements/SectionHeader.astro";
+import Container from "@/components/elements/Container.astro";
 import BoletinForm from "@/components/forms/BoletinForm.astro";
 
 const title = "Boletín informativo";
 const description =
-  "Recibe tips financieros exclusivos que solo compartimos con nuestros suscriptores directamente en tu correo electrónico.";
+	"Recibe tips financieros exclusivos que solo compartimos con nuestros suscriptores directamente en tu correo electrónico.";
 ---
 
-<Layout {title} {description}>
-  <Container className="space-y-8 sm:space-y-16">
-    <section class="flex flex-col md:flex-row items-center gap-4 mx-auto">
-      <SectionHeader
-        title="Tips financieros probados directo a tu correo"
-        subtitle="Accede a tips exclusivos, aumenta tus ingresos y aprende estrategias de inversión que no comparto en otro lado."
-        Tag="h1"
-        size="lg"
-        align="left"
-        capitalize
-        className="md:w-1/2 lg:h-3/5"
-      />
-      <div class="w-full sm:w-4/5 md:w-1/2 lg:2/5 max-w-md">
-        <Icon name="new-message" />
-      </div>
-    </section>
-    <section class="space-y-8 sm:space-y-16">
-      <SectionHeader
-        title="Unete a los cientos de personas que reciben tips financieros semanalmente en su correo"
-        Tag="h2"
-        size="md"
-        align="center"
-        capitalize
-        className="mx-auto max-w-xl"
-      />
-      <div
-        class="p-4 sm:p-12 text-2xl text-center mx-auto text-muted-foreground border rounded-lg max-w-md space-y-2"
-      >
-        <p class="font-semibold">¡Toma el control de tu dinero!</p>
-        <p class="text-xl">No dejes que el dinero te controle a tí.</p>
-      </div>
-    </section>
-    <BoletinForm text="No pierdo nada con intentar" />
-  </Container>
+<Layout
+	{title}
+	{description}
+>
+	<Container className="space-y-16">
+		<section class="flex flex-col md:flex-row items-center gap-4 mx-auto">
+			<SectionHeader
+				title="Tips financieros probados directo a tu correo"
+				subtitle="Accede a tips exclusivos, aumenta tus ingresos y aprende estrategias de inversión que no comparto en otro lado."
+				Tag="h1"
+				size="lg"
+				align="left"
+				capitalize
+				className="md:w-1/2 lg:h-3/5"
+			/>
+			<div class="w-full sm:w-4/5 md:w-1/2 lg:2/5 max-w-md">
+				<Icon name="new-message" />
+			</div>
+		</section>
+		<section class="space-y-8 sm:space-y-16">
+			<SectionHeader
+				title="Unete a los cientos de personas que reciben tips financieros semanalmente en su correo"
+				Tag="h2"
+				size="md"
+				align="center"
+				capitalize
+				className="mx-auto max-w-xl"
+			/>
+			<div
+				class="p-4 sm:p-12 text-2xl text-center mx-auto text-muted-foreground border rounded-lg max-w-md space-y-2"
+			>
+				<p class="font-semibold">¡Toma el control de tu dinero!</p>
+				<p class="text-xl">No dejes que el dinero te controle a tí.</p>
+			</div>
+		</section>
+		<BoletinForm
+			text="No pierdo nada con intentar"
+			className="max-w-md md:max-w-xl mx-auto"
+		/>
+		<!-- <BoletinForm
+			buttonText="No pierdo nada con intentar"
+			classes="max-w-md md:max-w-xl mx-auto"
+		/> -->
+	</Container>
 </Layout>

@@ -1,0 +1,16 @@
+---
+import Container from "@/components/elements/Container.astro";
+import { ModeToggle } from "@/components/header/ModeToggle";
+import Navbar from "@/components/header/Navbar.astro";
+import Logo from "@/components/header/Logo.astro";
+---
+
+<header class="border-b mb-8 sm:mb-16">
+	<Container>
+		<div class="flex items-center justify-between gap-4 py-4">
+			<Logo />
+			<Navbar />
+			<ModeToggle client:load />
+		</div>
+	</Container>
+</header>
